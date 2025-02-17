@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-hour',
@@ -6,14 +6,34 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './hour.component.html',
   styleUrl: './hour.component.css'
 })
-export class HourComponent implements OnInit{
+export class HourComponent implements OnInit, AfterViewInit{
     hour: string = '--'
     minute: string = '--'
     date: string = '-- -- ----'
 
+    constructor(private readonly elementRef: ElementRef) {}
+
+
     ngOnInit(): void {
         this.updateClock()
-        setInterval(() => this.updateClock(), 1000)
+        setInterval(() => this.updateClock(), 10000)
+    }
+
+    ngAfterViewInit(): void {
+        const cardElement = this.elementRef.nativeElement.querySelector('.clock-card');
+        if (!cardElement) return;
+
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const cardWidth = 300
+        const cardHeight = 120
+
+        const widthScale = (windowWidth * 0.8) / cardWidth
+        const heightScale = (windowHeight * 0.8) / cardHeight
+
+        const scale = Math.min(widthScale, heightScale)
+
+        cardElement.style.setProperty('--card-scale', scale.toString())
     }
 
     updateClock = () => {

@@ -1,12 +1,10 @@
 .clock-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 15px;
     padding: 25px;
     width: 300px;
     text-align: center;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
     animation: fadeIn 1.5s ease-in-out;
+    transform-origin: center center;
+    transform: scale(var(--card-scale, 1));
 }
 
 @keyframes fadeIn {

@@ -1,44 +1,42 @@
 .sensor-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 15px;
-  padding: 25px;
-  width: 250px;
-  text-align: center;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
-  animation: fadeIn 1.5s ease-in-out;
+    padding: 25px;
+    width: 250px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+    transform-origin: center center;
+    transform: scale(var(--card-scale, 1));
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .sensor-title {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #ffffff;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
 }
 
 .sensor-data {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .data-item {
-  text-align: center;
+    text-align: center;
 }
 
 .data-value {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #fff;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
 }
 
 .data-label {
-  font-size: 1.2em;
-  opacity: 0.8;
+    font-size: 1.2em;
+    opacity: 0.8;
 }

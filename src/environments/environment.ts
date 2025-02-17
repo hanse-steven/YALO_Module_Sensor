@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:5129/api';
+const apiUrl = 'http://domo:5000/api';
 export const environment = {
     sensorData: apiUrl + "/sensor/",
 };
